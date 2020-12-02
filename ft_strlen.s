@@ -2,8 +2,6 @@ section .text
 	global ft_strlen
 
 ft_strlen:
-	push rbp
-	mov rbp, rsp
 	mov rbx, rdi	;on met la string dans rbx
 	mov rax, rbx	;on fait pointer rax vers rbx
 
@@ -15,6 +13,4 @@ loop:
 
 end:
 	sub rax, rbx		;on soustrait les adresses pointant sur debut et fin de la str
-	mov rsp, rbp
-	pop rbp
 	ret					;on return

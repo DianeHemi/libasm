@@ -2,8 +2,6 @@ section .text
 	global ft_strcmp
 
 ft_strcmp:
-	push	rbp 				;Save adress of previous stack frame
-	mov		rbp, rsp			;Adress of current stack frame
 	mov		rcx, 0
 
 loop:
@@ -34,8 +32,6 @@ greater:
 
 
 end:
-	mov		rsp, rbp			;Pulling stack status
-	pop		rbp
 	ret
 
 

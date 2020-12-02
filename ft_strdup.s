@@ -24,10 +24,3 @@ copy:
 
 end:
 	ret
-
-
-
-
-
-;rdi = str
-;rax = strlen
