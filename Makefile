@@ -14,7 +14,15 @@ NAME =		libasm.a
 NA =		nasm
 NAFLAGS =	-f elf64
 
-SRCS =	ft_strlen.s
+CC = 		gcc
+CFLAGS =	-Wall -Wextra -Werror
+
+SRCS =	ft_strlen.s \
+		ft_strcpy.s \
+		ft_strcmp.s \
+		ft_write.s \
+		ft_read.s \
+		ft_strdup.s
 OBJS =	${SRCS:.s=.o}
 
 .s.o:
@@ -25,11 +33,16 @@ all: ${NAME}
 $(NAME): ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
+ccmain:
+	${CC} ${CLFAGS} main.c ${NAME}
+
 clean:
 	rm -f ${OBJS}
+	rm -f example.txt
 
 fclean: clean
 	rm -f ${NAME}
+	rm -f ./a.out
 
 re: fclean
 	$(MAKE)

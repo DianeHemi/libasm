@@ -2,8 +2,6 @@ section .text
 	global ft_strcpy
 
 ft_strcpy: 
-	push rbp 				;Save adress of previous stack frame
-	mov rbp, rsp			;Adress of current stack frame
 	xor rcx, rcx
 	cmp rsi, 0
 	je end
@@ -19,6 +17,4 @@ loop:
 
 end:
 	mov rax, rdi 			;On met la dest dans rax 
-	mov rsp, rbp			;Pulling stack status
-	pop rbp
 	ret
