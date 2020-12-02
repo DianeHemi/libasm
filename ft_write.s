@@ -3,7 +3,7 @@ section .text
 	extern	__errno_location
 
 ft_write:
-	mov	rax, 1		;sys_write
+	mov		rax, 1		;sys_write
 	syscall
 	jc		error
 	ret
