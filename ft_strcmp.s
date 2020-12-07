@@ -6,32 +6,37 @@ ft_strcmp:
 
 loop:
 	mov		byte dl, [rdi + rcx]
-	mov		byte dh, [rsi, rcx]
+	mov		byte dh, [rsi + rcx]
 	add 	rcx, 1
 	cmp		dl, 0
-	je		equal
-	cmp		byte dl, dh
+	je		cmp
+	cmp		dh, 0
+	je		cmp2
+	cmp		dl, dh
 	je		loop
+
+cmp:
+	sub		dl, dh
+	cmp		dl, 0
 	jl		lower
 	jg		greater
-
-equal:
-	cmp		dh, 0
-	jl		greater
-	jg		lower
 	mov		rax, 0
-	jmp		end
+	ret
+
+cmp2:
+	sub		dh, dl
+	cmp		dh, 0
+	jg		lower
+	jl		greater
+	mov		rax, 0
+	ret
 
 lower:
 	mov 	rax, -1
 	jmp		end
 
 greater:
-	mov		rax, 1
-	jmp		end
+	mov 	rax, 1
 
 end:
 	ret
-
-
-
