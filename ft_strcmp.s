@@ -30,7 +30,6 @@ greater:
 	mov		rax, 1
 	jmp		end
 
-
 end:
 	ret
 

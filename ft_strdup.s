@@ -9,9 +9,8 @@ ft_strdup:
 	call	ft_strlen
 	add		rax, 1
 
-malloc:
 	mov		rdi, rax
-	call	malloc
+	call	malloc wrt ..plt
 	cmp		rax, 0
 	je		end
 	jne		copy

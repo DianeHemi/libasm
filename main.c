@@ -57,7 +57,7 @@ int main(void)
 	char	*str4 = "Oh yes; but one is never so pretty after being mended, you know.";
 	char	var_strcpy[60];
 	char 	*to_read;
-	int fd;
+	int 	fd;
 
 	printf("---------------\n---FT_STRLEN---\n---------------\n");
 	test_strlen(str);
