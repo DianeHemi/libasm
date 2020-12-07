@@ -5,7 +5,8 @@ section .text
 ft_write:
 	mov		rax, 1		;sys_write
 	syscall
-	jc		error
+	cmp		rax, 0
+	jl		error
 	ret
 
 error:
